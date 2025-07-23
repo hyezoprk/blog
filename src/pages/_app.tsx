@@ -32,7 +32,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </RecoilRoot>
       {/*
         </SessionProvider >
-        </ApolloProvider> */ }
+        </ApolloProvider> */}
     </>
   );
 }
