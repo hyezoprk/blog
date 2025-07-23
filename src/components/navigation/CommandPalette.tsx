@@ -172,11 +172,10 @@ function RenderResults() {
             <div
               onMouseEnter={() => tick()}
               onMouseUp={() => tap()}
-              className={`${
-                active
+              className={`${active
                   ? "cursor-pointer rounded-md  bg-emerald-600 text-gray-100"
                   : "bg-transparent"
-              } 
+                } 
             flex w-full items-center space-x-3 p-2 text-base`}
             >
               {item.icon}

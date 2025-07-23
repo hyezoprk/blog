@@ -1,7 +1,5 @@
 import { CommandPalette, Logo } from "@/components/navigation";
-import { apolloClient } from "@/lib/graphql/apollo-client";
 import "@/styles/tailwind.css";
-import { ApolloProvider } from "@apollo/client";
 import "@code-hike/mdx/dist/index.css";
 import { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
@@ -20,20 +18,20 @@ export default function MyApp({ Component, pageProps }: AppProps<{ session: Sess
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
         />
       </Head>
-      <ApolloProvider client={apolloClient}>
-        <SessionProvider session={pageProps.session}>
-          <RecoilRoot>
-            <ThemeProvider attribute="class" defaultTheme="system">
-              <CommandPalette>
-                <Logo>
-                  <Component {...pageProps} />
-                  <Toaster />
-                </Logo>
-              </CommandPalette>
-            </ThemeProvider>
-          </RecoilRoot>
-        </SessionProvider>
-      </ApolloProvider>
+      {/*<ApolloProvider client={apolloClient}> */}
+      <SessionProvider session={pageProps.session}>
+        <RecoilRoot>
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <CommandPalette>
+              <Logo>
+                <Component {...pageProps} />
+                <Toaster />
+              </Logo>
+            </CommandPalette>
+          </ThemeProvider>
+        </RecoilRoot>
+      </SessionProvider>
+      {/*</ApolloProvider> */}
     </>
   );
 }
